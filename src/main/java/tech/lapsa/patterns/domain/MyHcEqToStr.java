@@ -61,6 +61,10 @@ public final class MyHcEqToStr {
 	return HashCodeBuilder.reflectionHashCode(prime, multiplier, obj, false);
     }
 
+    public static int hashCode(final Object obj, final int prime) {
+	return hashCode(obj, prime, prime);
+    }
+
     public static final boolean equals(final Object obj, final Object other) {
 	return EqualsBuilder.reflectionEquals(obj, other, false);
     }
