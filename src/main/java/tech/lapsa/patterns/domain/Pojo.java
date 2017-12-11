@@ -19,19 +19,19 @@ public abstract class Pojo implements Serializable {
     private final Integer multiplier;
     private final ToStringStyle style;
 
-    final static Integer primeOf(final Class<?> clazz) {
+    public final static Integer primeOf(final Class<?> clazz) {
 	return MyAnnotations.optionalOf(clazz, HashCodePrime.class) //
 		.map(HashCodePrime::value) //
 		.orElseThrow(() -> new IncompleteAnnotationException(HashCodePrime.class, "value"));
     }
 
-    final static Integer multiplierOf(final Class<?> clazz, final Integer prime) {
+    public final static Integer multiplierOf(final Class<?> clazz, final Integer prime) {
 	return MyAnnotations.optionalOf(clazz, HashCodeMultiplier.class) //
 		.map(HashCodeMultiplier::value) //
 		.orElse(prime);
     }
 
-    final static ToStringStyle styleOf(final Class<?> clazz) {
+    public final static ToStringStyle styleOf(final Class<?> clazz) {
 	return MyAnnotations.optionalOf(clazz, ToStringStyleName.class) //
 		.map(ToStringStyleName::value)
 		.map(s -> {
@@ -57,7 +57,7 @@ public abstract class Pojo implements Serializable {
 		.orElse(ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    final static Locale toStringLocaleOf(final Class<?> clazz) {
+    public final static Locale toStringLocaleOf(final Class<?> clazz) {
 	return MyAnnotations.optionalOf(clazz, ToStringLanguageTag.class) //
 		.map(ToStringLanguageTag::value) //
 		.map(Locale::forLanguageTag) //
