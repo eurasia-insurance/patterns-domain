@@ -65,12 +65,26 @@ public final class MyHcEqToStr {
 	return hashCode(obj, prime, prime);
     }
 
+    public static int hashCode(final Object obj) {
+	final int prime = primeOf(obj.getClass());
+	final int multiplier = multiplierOf(obj.getClass(), prime);
+	return hashCode(obj, prime, multiplier);
+    }
+
+    //
+
     public static final boolean equals(final Object obj, final Object other) {
 	return EqualsBuilder.reflectionEquals(obj, other, false);
     }
 
+    //
+
     public static final String toString(final Object obj, final ToStrStyle style) {
 	return ToStringBuilder.reflectionToString(obj, style.apacheStyle);
+    }
+
+    public static String toString(final Object obj) {
+	return toString(obj, styleOf(obj.getClass()));
     }
 
 }
