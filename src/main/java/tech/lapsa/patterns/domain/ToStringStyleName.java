@@ -5,8 +5,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import tech.lapsa.patterns.domain.MyHcEqToStr.ToStrStyle;
+
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface ToStringStyleName {
-    String value();
+    ToStrStyle value();
 }

@@ -39,7 +39,7 @@
 			<groupId>tech.lapsa.java</groupId>
 			<artifactId>java-commons</artifactId>
 			<scope>compile</scope>
-			<optional>false</optional>
+			<optional>true</optional>
 		</dependency>
 		<!-- ext -->
 		<dependency>
@@ -47,7 +47,7 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.4</version>
 			<scope>compile</scope>
-			<optional>false</optional>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
