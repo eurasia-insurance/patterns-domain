@@ -24,7 +24,7 @@ public final class MyHcEqToStr {
 	private final ToStringStyle apacheStyle;
 
 	private ToStrStyle(final ToStringStyle style) {
-	    this.apacheStyle = style;
+	    apacheStyle = style;
 	}
     }
 
