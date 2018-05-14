@@ -1,6 +1,5 @@
 package tech.lapsa.patterns.domain;
 
-import java.lang.annotation.IncompleteAnnotationException;
 import java.util.Locale;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -8,6 +7,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import tech.lapsa.java.commons.function.MyExceptions;
 import tech.lapsa.java.commons.reflect.MyAnnotations;
 
 public final class MyHcEqToStr {
@@ -31,7 +31,9 @@ public final class MyHcEqToStr {
     public final static int primeOf(final Class<?> clazz) {
 	return MyAnnotations.optionalOf(clazz, HashCodePrime.class) //
 		.map(HashCodePrime::value) //
-		.orElseThrow(() -> new IncompleteAnnotationException(HashCodePrime.class, "value")) //
+		.orElseThrow(MyExceptions.illegalStateSupplier(
+			"%1$s must be annotated with %2$s to define a PRIME value for hash calculations", clazz,
+			HashCodePrime.class)) //
 		.intValue();
     }
 
