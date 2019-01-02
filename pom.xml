@@ -9,7 +9,7 @@
 
 	<groupId>tech.lapsa.patterns</groupId>
 	<artifactId>patterns-domain</artifactId>
-	<version>20190103</version>
+	<version>CURRENT-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Patterns Lib : Domain</name>
@@ -53,7 +53,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/eurasia-insurance/patterns-domain.git</connection>
 		<developerConnection>scm:git:https://github.com/eurasia-insurance/patterns-domain.git</developerConnection>
-		<tag>v20190103</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 </project>
