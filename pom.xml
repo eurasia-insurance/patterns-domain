@@ -16,7 +16,7 @@
 
 	<properties>
 		<!-- BOMS -->
-		<java-commons.version>CURRENT-SNAPSHOT</java-commons.version>
+		<java-commons.version>20190317r6</java-commons.version>
 	</properties>
 
 	<dependencyManagement>
